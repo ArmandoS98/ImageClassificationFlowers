@@ -79,11 +79,10 @@ class MainActivity : AppCompatActivity() {
         // Attach an observer on the LiveData field of recognitionList
         // This will notify the recycler view to update every time when a new list is set on the
         // LiveData field of recognitionList.
-        recogViewModel.recognitionList.observe(this,
-            Observer {
-                viewAdapter.submitList(it)
-            }
-        )
+        recogViewModel.recognitionList.observe(this
+        ) {
+            viewAdapter.submitList(it)
+        }
     }
 
     /**
